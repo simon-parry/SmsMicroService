@@ -8,6 +8,7 @@ namespace SmsMessagesMicroService.Api.DependencyInjection
         public static void RegisterDependencies(IServiceCollection services)
         {
             services.AddTransient<ISendSmsMessage, SendSmsMessage>();
+            services.AddTransient<IRabbitMqConnectionFactory, RabbitMqConnection>();
         }
     }
 }

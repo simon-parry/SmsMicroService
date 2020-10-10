@@ -36,7 +36,7 @@ namespace SmsMessagesMicroService.Api
             var connection = Configuration["DefaultDatabaseConnection"];
             services.AddDbContext<MessagesDbContext>(options => options.UseSqlServer(connection));
 
-            services.Configure<RabbitMqConnection>(Configuration.GetSection("RabbitMq"));
+            services.Configure<RabbitMqConnectionData>(Configuration.GetSection("RabbitMq"));
 
             services.AddCors(options =>
             {
