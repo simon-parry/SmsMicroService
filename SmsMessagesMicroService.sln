@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsMessagesMicroService.Api", "SmsMessagesMicroService.Api\SmsMessagesMicroService.Api.csproj", "{3FD667E8-CF63-4DDE-AB55-F51416B3392A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsMessagesMicroService.Domain", "SmsMessagesMicroService.Domain\SmsMessagesMicroService.Domain.csproj", "{E32F010E-35C7-45ED-8B57-78960A55724E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsMessagesMicroService.MessageSender", "SmsMessagesMicroService.MessageSender\SmsMessagesMicroService.MessageSender.csproj", "{2AB4ED05-3A10-4D60-8528-3484E087EE37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsMessagesMicroService.Models", "SmsMessagesMicroService.Models\SmsMessagesMicroService.Models.csproj", "{0DA2A15D-750C-4AE9-A932-BD9A201084E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsMessagesMicroService.Repository", "SmsMessagesMicroService.Repository\SmsMessagesMicroService.Repository.csproj", "{18D5B49C-B691-4840-8387-E20CBD7EC0FE}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Messages.Database", "Messages.Database\Messages.Database.sqlproj", "{4F2E540E-3559-4B27-83BA-5C9CB41CF072}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsMessagesMicroService.Domain.Tests", "SmsMessagesMicroService.Domain.Tests\SmsMessagesMicroService.Domain.Tests.csproj", "{75672E63-495E-4D98-99D7-954A13D9BDC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsMessagesMicroService.MessageSender.Tests", "SmsMessagesMicroService.MessageSender.Tests\SmsMessagesMicroService.MessageSender.Tests.csproj", "{DFCE52C0-3500-4D3E-B476-4977CF132B67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsMessagesMicroService.Repository.Tests", "SmsMessagesMicroService.Repository.Tests\SmsMessagesMicroService.Repository.Tests.csproj", "{BD4EF7DA-64C6-4F3A-8C92-4376A9FDB3C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FD667E8-CF63-4DDE-AB55-F51416B3392A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD667E8-CF63-4DDE-AB55-F51416B3392A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD667E8-CF63-4DDE-AB55-F51416B3392A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD667E8-CF63-4DDE-AB55-F51416B3392A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E32F010E-35C7-45ED-8B57-78960A55724E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32F010E-35C7-45ED-8B57-78960A55724E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32F010E-35C7-45ED-8B57-78960A55724E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32F010E-35C7-45ED-8B57-78960A55724E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB4ED05-3A10-4D60-8528-3484E087EE37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB4ED05-3A10-4D60-8528-3484E087EE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB4ED05-3A10-4D60-8528-3484E087EE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB4ED05-3A10-4D60-8528-3484E087EE37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA2A15D-750C-4AE9-A932-BD9A201084E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA2A15D-750C-4AE9-A932-BD9A201084E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA2A15D-750C-4AE9-A932-BD9A201084E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA2A15D-750C-4AE9-A932-BD9A201084E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D5B49C-B691-4840-8387-E20CBD7EC0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D5B49C-B691-4840-8387-E20CBD7EC0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D5B49C-B691-4840-8387-E20CBD7EC0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D5B49C-B691-4840-8387-E20CBD7EC0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F2E540E-3559-4B27-83BA-5C9CB41CF072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F2E540E-3559-4B27-83BA-5C9CB41CF072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F2E540E-3559-4B27-83BA-5C9CB41CF072}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4F2E540E-3559-4B27-83BA-5C9CB41CF072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F2E540E-3559-4B27-83BA-5C9CB41CF072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F2E540E-3559-4B27-83BA-5C9CB41CF072}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{75672E63-495E-4D98-99D7-954A13D9BDC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75672E63-495E-4D98-99D7-954A13D9BDC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75672E63-495E-4D98-99D7-954A13D9BDC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75672E63-495E-4D98-99D7-954A13D9BDC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFCE52C0-3500-4D3E-B476-4977CF132B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFCE52C0-3500-4D3E-B476-4977CF132B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFCE52C0-3500-4D3E-B476-4977CF132B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFCE52C0-3500-4D3E-B476-4977CF132B67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD4EF7DA-64C6-4F3A-8C92-4376A9FDB3C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4EF7DA-64C6-4F3A-8C92-4376A9FDB3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4EF7DA-64C6-4F3A-8C92-4376A9FDB3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4EF7DA-64C6-4F3A-8C92-4376A9FDB3C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E72E993D-635D-4EE2-9A16-6BF0E2EBDD65}
+	EndGlobalSection
+EndGlobal
