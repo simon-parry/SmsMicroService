@@ -53,7 +53,7 @@ Extended configuration for the database and rabbit is covered in the appsettings
 
 ## ToDo
 
-- Implement Mesage reciver to take messages from queue and send to sms provider
+- Implement Mesage receiver to take messages from queue and send to sms provider
 - Exception Handling
 - Logging
 - Unit Test repository
