@@ -17,7 +17,7 @@ The architecture of the microservice is CQRS pattern using mediatr, with a repos
 
 The following is required to set and run the microservice.
 
-RabbitMq
+#### RabbitMq
 If you do not have RabbitMq installed the easiest way is to run it is in a Docker container. 
 
 [Docker](https://hub.docker.com/_/rabbitmq) already provides a RabbitMq container, this can be setup by running the following two lines in Powershell.
@@ -28,7 +28,7 @@ If you do not have RabbitMq installed the easiest way is to run it is in a Docke
 
 Once installed you can navigate to (http://127.0.0.1:15672/) and access the GUI.
 
-Database
+#### Database
 The microservice uses a SqlSever database. To install this, open the SmsMessagesMicroService.sln solution file in Visual Studio.
 From the Solution Explorer right click on the Messages.Database project and choose Publish. 
 
@@ -38,7 +38,7 @@ You will be asked to configure a connection to your database instance, this will
   <img src="dbconnect.png">
 </p>
 
-Application
+#### Application
 To run the application, once the database has been installed and rabbitMq is running, from Visual Studio set SmsMessagesMicroService.Api as the start up and click start.
 
 The web api is configured to use Swagger, once running you should be presented with the below screen. From here you can run the api methods.
