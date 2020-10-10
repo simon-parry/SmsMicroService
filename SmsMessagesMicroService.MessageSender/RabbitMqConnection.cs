@@ -1,15 +1,32 @@
-﻿namespace SmsMessagesMicroService.MessageSender
+﻿using Microsoft.Extensions.Options;
+using RabbitMQ.Client;
+
+namespace SmsMessagesMicroService.MessageSender
 {
-    public class RabbitMqConnection
+    public interface IRabbitMqConnectionFactory
     {
-        public string Hostname { get; set; }
+        IConnection CreateConnection();
+    }
+    public class RabbitMqConnection : IRabbitMqConnectionFactory
+    {
+        private readonly RabbitMqConnectionData _rabbitMqConnectionData;
 
-        public int Port { get; set; }
+        public RabbitMqConnection(IOptions<RabbitMqConnectionData> rabbitMqConnectionData)
+        {
+            _rabbitMqConnectionData = rabbitMqConnectionData.Value;
+        }
 
-        public string QueueName { get; set; }
+        public IConnection CreateConnection()
+        {
+            var factory = new ConnectionFactory
+            {
+                HostName = _rabbitMqConnectionData.Hostname,
+                Port = _rabbitMqConnectionData.Port,
+                UserName = _rabbitMqConnectionData.UserName,
+                Password = _rabbitMqConnectionData.Password
+            };
 
-        public string UserName { get; set; }
-
-        public string Password { get; set; }
+            return  factory.CreateConnection();
+        }
     }
 }

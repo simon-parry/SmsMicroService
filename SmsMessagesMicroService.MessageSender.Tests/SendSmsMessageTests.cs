@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using Moq;
+using RabbitMQ.Client;
 using SmsMessagesMicroService.MessageSender.QueueEntities;
 using Xunit;
 
@@ -7,15 +8,15 @@ namespace SmsMessagesMicroService.MessageSender.Tests
 {
     public class SendSmsMessageTests
     {
-        private readonly Mock<IOptions<RabbitMqConnection>> _rabbitMqOptions;
-        private readonly SendSmsMessage _instance;
+        private readonly Mock<IOptions<RabbitMqConnectionData>> _rabbitMqOptions;
+        private readonly Mock<IRabbitMqConnectionFactory> _connectionFactory;
+        private SendSmsMessage _instance;
 
         public SendSmsMessageTests()
         {
-            _rabbitMqOptions = new Mock<IOptions<RabbitMqConnection>>();
-
+            _rabbitMqOptions = new Mock<IOptions<RabbitMqConnectionData>>();
             _rabbitMqOptions.Setup(x => x.Value)
-                .Returns(new RabbitMqConnection()
+                .Returns(new RabbitMqConnectionData()
                 {
                     Hostname = "localhost",
                     Port = 15267,
@@ -24,12 +25,17 @@ namespace SmsMessagesMicroService.MessageSender.Tests
                     QueueName = "MessagesQueue"
                 });
 
-            _instance = new SendSmsMessage(_rabbitMqOptions.Object);
+            _connectionFactory = new Mock<IRabbitMqConnectionFactory>();
         }
 
         [Fact]
         public void TestSuccessfullyAddingMessageToQueue()
         {
+            var connection = new Mock<IConnection>();
+            var model = new Mock<IModel>();
+            _instance = new SendSmsMessage(_rabbitMqOptions.Object, _connectionFactory.Object);
+            _connectionFactory.Setup(x => x.CreateConnection()).Returns(connection.Object);
+            connection.Setup(x => x.CreateModel()).Returns(model.Object);
 
             var result = _instance.Send(It.IsAny<Sms>());
 
@@ -39,7 +45,10 @@ namespace SmsMessagesMicroService.MessageSender.Tests
         [Fact]
         public void TestUnSuccessfullyAddingMessageToQueue()
         {
+            _instance = new SendSmsMessage(_rabbitMqOptions.Object, _connectionFactory.Object);
+
             var result = _instance.Send(It.IsAny<Sms>());
+
             Assert.False(result);
         }
     }

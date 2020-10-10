@@ -1,44 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using SmsMessagesMicroService.MessageSender.QueueEntities;
+using System;
+using System.Text;
 
 namespace SmsMessagesMicroService.MessageSender
 {
     public class SendSmsMessage : ISendSmsMessage
     {
-        private readonly string _hostname;
-        private readonly string _queueName;
-        private readonly string _username;
-        private readonly string _password;
-        private readonly int _port;
+        private readonly RabbitMqConnectionData _rabbitMqConnectionData;
+        private readonly IRabbitMqConnectionFactory _factory;
 
-        public SendSmsMessage(IOptions<RabbitMqConnection> rabbitMqOptions)
+        public SendSmsMessage(IOptions<RabbitMqConnectionData> rabbitMqConnectionData,
+            IRabbitMqConnectionFactory factory)
         {
-            _hostname = rabbitMqOptions.Value.Hostname;
-            _queueName = rabbitMqOptions.Value.QueueName;
-            _username = rabbitMqOptions.Value.UserName;
-            _password = rabbitMqOptions.Value.Password;
-            _port = rabbitMqOptions.Value.Port;
+            _rabbitMqConnectionData = rabbitMqConnectionData.Value;
+            _factory = factory;
         }
 
         public bool Send(Sms message)
         {
-            var factory = new ConnectionFactory() { HostName = _hostname, Port = _port, UserName = _username, Password = _password };
             try
             {
-                using (var connection = factory.CreateConnection())
-                using (var channel = connection.CreateModel())
+                using (var connection = _factory.CreateConnection())
+                using (IModel channel = connection.CreateModel())
                 {
-                    channel.QueueDeclare(queue: _queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);
+                    channel.QueueDeclare(queue: _rabbitMqConnectionData.QueueName, durable: false, exclusive: false, autoDelete: false, arguments: null);
 
                     var json = JsonConvert.SerializeObject(message);
                     var body = Encoding.UTF8.GetBytes(json);
 
-                    channel.BasicPublish(exchange: "", routingKey: _queueName, basicProperties: null, body: body);
+                    channel.BasicPublish(exchange: "", routingKey: _rabbitMqConnectionData.QueueName, basicProperties: null, body: body);
                 }
             }
             catch (Exception e)
