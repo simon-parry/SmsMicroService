@@ -48,3 +48,11 @@ The web api is configured to use Swagger, once running you should be presented w
 </p>
 
 Extended configuration for the database and rabbit is covered in the appsettings.json and launchSettings.json files in the SmsMessagesMicroService.Api project.
+
+## ToDo
+
+- Implement Mesage reciver to take messages from queue and send to sms provider
+- Exception Handling
+- Logging
+- Unit Test repository
+
