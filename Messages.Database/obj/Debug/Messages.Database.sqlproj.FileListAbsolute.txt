@@ -1,0 +1,9 @@
+C:\VSO\Source\Repos\SmsMessagesMicroService\Messages.Database\bin\Debug\Messages.Database.dacpac
+C:\VSO\Source\Repos\SmsMessagesMicroService\Messages.Database\bin\Debug\Messages.Database.dll
+C:\VSO\Source\Repos\SmsMessagesMicroService\Messages.Database\bin\Debug\Messages.Database.pdb
+C:\VSO\Source\Repos\SmsMessagesMicroService\Messages.Database\obj\Debug\Messages.Database.dll
+C:\VSO\Source\Repos\SmsMessagesMicroService\Messages.Database\obj\Debug\Messages.Database.pdb
+C:\VSO\Source\Repos\SmsMessagesMicroService\Messages.Database\obj\Debug\Model.xml
+C:\VSO\Source\Repos\SmsMessagesMicroService\Messages.Database\obj\Debug\refactor.xml
+C:\VSO\Source\Repos\SmsMessagesMicroService\Messages.Database\obj\Debug\postdeploy.sql
+C:\VSO\Source\Repos\SmsMessagesMicroService\Messages.Database\obj\Debug\predeploy.sql

@@ -1,0 +1,17 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[SmsMessages] (Table)
+       [dbo].[DF_Message_Result] (Default Constraint)
+       [dbo].[DF_Message_DateAdded] (Default Constraint)
+
+** Supporting actions
