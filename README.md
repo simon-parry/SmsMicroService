@@ -18,6 +18,8 @@ The architecture of the microservice is CQRS pattern using mediatr, with a repos
 The following is required to set and run the microservice.
 
 #### RabbitMq
+If you have RabbitMq installed, edit the appsettings.json file in the SmsMessagesMicroService.Api project and add in the correct port and host for your RabbitMq server.
+
 If you do not have RabbitMq installed the easiest way is to run it is in a Docker container. 
 
 [Docker](https://hub.docker.com/_/rabbitmq) already provides a RabbitMq container, this can be setup by running the following two lines in Powershell.
