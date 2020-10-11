@@ -1,12 +1,13 @@
 # SmsMicroService
-A WebApi microservice to simulate the sending of a sms message upto the point of adding the sms to a message broker to process, and the retireval of messages from a SqlServer database. Written using .net core and visual studio 2017 with RabbitMq and SqlServer
+A WebApi microservice to simulate the sending of a sms message, upto the point of adding the sms to a message broker, and the retireval of messages from a Sql Server database. Written using .net Core and Visual Studio 2017 with RabbitMq and SqlServer
 
 The Api has three method
 - SendMessage 
 - GetAllMessages 
 - GetMessageById
 
-The architecture of the microservice is CQRS pattern using mediatr, with a repository and unit or work pattern for the database. XUnit for the test framework
+The architecture of the microservice is CQRS pattern using MediatR, with a repository and unit of work pattern for the database.
+XUnit for the test framework.
 
 <p align="center">
   <img src="sms2.png">
