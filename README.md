@@ -1,4 +1,4 @@
-# Microservice with CQRS and medaitR with rabbitMq
+# Microservice with CQRS and mediatR with rabbitMq
 
 A WebApi microservice to simulate the sending of a sms message, upto the point of adding the sms to a message broker, and the retireval of messages from a Sql Server database. Written using .net Core and Visual Studio 2017 with RabbitMq and SqlServer
 
